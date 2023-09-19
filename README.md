@@ -118,3 +118,8 @@ default:
 ### 既存公開記事の更新
 
 - `entries` 配下の記事を編集した プルリクエストが main ブランチにマージされると、はてなブログの記事も同時に更新されます
+
+## workflow に関する詳細
+
+- 各 workflow では下記で提供されている Reusable workflows を利用しています
+  - https://github.com/hatena/hatenablog-workflows
