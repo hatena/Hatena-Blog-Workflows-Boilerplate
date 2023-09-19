@@ -1,0 +1,20 @@
+name: push when publishing from draft
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+    paths:
+      - "draft_entries/**"
+
+jobs:
+  push:
+    if: |
+      github.event.pull_request.merged == true
+      && !startsWith(github.head_ref, 'from-draft-to-publish')
+    uses: hatena/hatenablog-workflows/workflows/_push-when-publishing-from-draft.yaml@main
+    with:
+      BLOG_DOMAIN: ${{ vars.BLOG_DOMAIN }}
+    secrets:
+      OWNER_API_KEY: ${{ secrets.OWNER_API_KEY }}

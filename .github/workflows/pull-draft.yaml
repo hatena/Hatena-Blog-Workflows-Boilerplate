@@ -1,0 +1,17 @@
+name: pull draft from hatenablog
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Draft Entry Title"
+        required: true
+
+jobs:
+  pull-draft:
+    uses: hatena/hatenablog-workflows/.github/workflows/_pull-draft.yaml@main
+    with:
+      title: ${{ github.event.inputs.title }}
+      BLOG_DOMAIN: ${{ vars.BLOG_DOMAIN }}
+    secrets:
+      OWNER_API_KEY: ${{ secrets.OWNER_API_KEY }}

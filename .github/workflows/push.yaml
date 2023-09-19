@@ -1,0 +1,20 @@
+name: push to hatena blog
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+    paths:
+      - "entries/**"
+
+jobs:
+  push:
+    if: |
+      github.event.pull_request.merged == true
+      && !startsWith(github.head_ref, 'from-draft-to-publish')
+    uses: hatena/hatenablog-workflows/.github/workflows/_push.yaml@main
+    with:
+      local_root: "entries"
+    secrets:
+      OWNER_API_KEY: ${{ secrets.OWNER_API_KEY }}

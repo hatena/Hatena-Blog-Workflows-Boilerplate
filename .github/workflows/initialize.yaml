@@ -1,0 +1,12 @@
+name: initialize
+
+on:
+  workflow_dispatch:
+
+jobs:
+  initialize:
+    uses: hatena/hatenablog-workflows/.github/workflows/_initialize.yaml@main
+    with:
+      BLOG_DOMAIN: ${{ vars.BLOG_DOMAIN }}
+    secrets:
+      OWNER_API_KEY: ${{ secrets.OWNER_API_KEY }}

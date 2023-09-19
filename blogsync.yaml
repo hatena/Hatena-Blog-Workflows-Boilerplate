@@ -1,0 +1,5 @@
+<BLOG DOMAIN>:
+  username: <HATENA ID>
+  owner: <OWNER HATENA ID>
+default:
+  local_root: entries
