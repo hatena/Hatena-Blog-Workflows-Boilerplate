@@ -13,7 +13,7 @@ jobs:
     if: |
       github.event.pull_request.merged == true
       && !startsWith(github.head_ref, 'from-draft-to-publish')
-    uses: hatena/hatenablog-workflows/.github/workflows/_push.yaml@main
+    uses: hatena/hatenablog-workflows/.github/workflows/push.yaml@v1
     with:
       local_root: "entries"
     secrets:

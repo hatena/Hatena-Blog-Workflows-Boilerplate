@@ -5,7 +5,7 @@ on:
 
 jobs:
   initialize:
-    uses: hatena/hatenablog-workflows/.github/workflows/_initialize.yaml@main
+    uses: hatena/hatenablog-workflows/.github/workflows/initialize.yaml@v1
     with:
       BLOG_DOMAIN: ${{ vars.BLOG_DOMAIN }}
     secrets:
