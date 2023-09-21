@@ -15,14 +15,17 @@
 default:
   local_root: entries
 ```
-2. GitHub リポジトリの 「`Secrets and variables` > `actions` > `Repository variables`」 から以下のVariableを登録する
+2. GitHub リポジトリの設定 「`Secrets and variables` > `actions` > `Repository variables`」 から以下のVariableを登録する
     - Name: `BLOG_DOMAIN` 
     - Value: ブログのドメインを指定してください 例) staff.hatenablog.com
-3. GitHub リポジトリの 「`Secrets and variables` > `actions` > `Repository Secrets`」 から以下のSecretを登録する
+3. GitHub リポジトリの設定 「`Secrets and variables` > `actions` > `Repository Secrets`」 から以下のSecretを登録する
     - Name: `OWNER_API_KEY`
     - Secret: ブログのオーナーはてなアカウントの APIキーを指定してください
         - APIキーは、ブログオーナーアカウントでログイン後、[アカウント設定](https://blog.hatena.ne.jp/-/config) よりご確認いただけます
-4. リポジトリにはてなブログの記事を同期させる
+4. GitHub リポジトリの設定 「`Actions` > `General`」 の `Workflow permissions` の設定を以下の通り変更する
+    - `Read and write permissions` を選択する
+    - `Allow GitHub Actions to create and approve pull requests` にチェックを入れる
+5. リポジトリにはてなブログの記事を同期させる
     - Actions から `initialize` を選択する
     - Run workflow をクリック
     - `Branch: main` が指定されていることを確認し、`Run workflow`ボタンをクリック
