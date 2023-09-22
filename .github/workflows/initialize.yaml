@@ -2,11 +2,17 @@ name: initialize
 
 on:
   workflow_dispatch:
+    inputs:
+      is_draft_included:
+        description: "同期対象に下書きを含める(未公開の記事が commit されます)"
+        required: true
+        type: boolean
 
 jobs:
   initialize:
     uses: hatena/hatenablog-workflows/.github/workflows/initialize.yaml@v1
     with:
+      is_draft_included: ${{ inputs.is_draft_included }}
       BLOG_DOMAIN: ${{ vars.BLOG_DOMAIN }}
     secrets:
       OWNER_API_KEY: ${{ secrets.OWNER_API_KEY }}
