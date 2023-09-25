@@ -1,4 +1,4 @@
 <BLOG DOMAIN>:
-  username: <BLOG OWNER HATENA ID>
+  username: namu-r21
 default:
-  local_root: entries
+  local_root: entry
