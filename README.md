@@ -25,7 +25,9 @@ default:
 4. GitHub リポジトリの設定 「`Actions` > `General`」 の `Workflow permissions` の設定を以下の通り変更する
     - `Read and write permissions` を選択する
     - `Allow GitHub Actions to create and approve pull requests` にチェックを入れる
-5. リポジトリにはてなブログの記事を同期させる
+5. GitHub リポジトリの設定 「`Branches`」 の`Add branch protection rule`ボタンから、ルールを作成する
+    - `Branch name pattern` に `main` を指定する
+6. リポジトリにはてなブログの記事を同期させる
     - Actions から `initialize` を選択する
     - Run workflow をクリック
     - `Branch: main` が指定されていることを確認し、`Run workflow`ボタンをクリック
