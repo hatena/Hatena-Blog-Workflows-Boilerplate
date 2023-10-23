@@ -9,7 +9,7 @@ on:
       - "draft_entries/**"
 
 jobs:
-  push:
+  push-when-publishing-from-draft:
     uses: hatena/hatenablog-workflows/.github/workflows/push-when-publishing-from-draft.yaml@v1
     with:
       BLOG_DOMAIN: ${{ vars.BLOG_DOMAIN }}
