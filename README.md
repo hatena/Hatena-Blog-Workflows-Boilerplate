@@ -9,7 +9,7 @@
 1. `blogsync.yaml`の各種項目を記述してください
     - `<BLOG DOMAIN>` にはブログのブログ取得時に設定したドメインを指定してください(独自ドメインではありません)
     - `<BLOG OWNER HATENA ID>` にはブログのオーナー(ブログ作成者)のはてなIDを指定してください
-    - どちらの項目もブログの「詳細設定 > AtomPub > ルートエンドポイント」から確認できます
+    - 上記のどちらの項目もブログの「詳細設定 > AtomPub > ルートエンドポイント」から確認できます。ルートエンドポイントは以下のように構成されています
         - `https://blog.hatena.ne.jp/<BLOG OWNER HATENA ID>/<BLOG DOMAIN>/atom`
 ```yaml
 <BLOG DOMAIN>:
