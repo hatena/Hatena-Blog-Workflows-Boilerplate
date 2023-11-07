@@ -5,8 +5,9 @@
 
 
 # セットアップ
-
-1. `blogsync.yaml`の各種項目を記述してください
+1. 本リポジトリトップに表示されている、「Use this template ボタンクリック > Create a new repository」から、新規にリポジトリを作成する
+    - ![Use this templateボタンの位置](https://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenablog/20231107/20231107164142.png)
+2. `blogsync.yaml`の各種項目を記述してください
     - `<BLOG DOMAIN>` にはブログのブログ取得時に設定したドメインを指定してください(独自ドメインではありません)
     - `<BLOG OWNER HATENA ID>` にはブログのオーナー(ブログ作成者)のはてなIDを指定してください
     - 上記のどちらの項目もブログの「詳細設定 > AtomPub > ルートエンドポイント」から確認できます。ルートエンドポイントは以下のように構成されています
@@ -17,24 +18,24 @@
 default:
   local_root: entries
 ```
-2. GitHub リポジトリの設定 「`Secrets and variables` > `actions` > `Repository variables`」 から以下のVariableを登録する
+3. GitHub リポジトリの設定 「`Secrets and variables` > `actions` > `Repository variables`」 から以下のVariableを登録する
     - Name: `BLOG_DOMAIN` 
     - Value: ブログのドメインを指定してください 例) staff.hatenablog.com
-3. GitHub リポジトリの設定 「`Secrets and variables` > `actions` > `Repository Secrets`」 から以下のSecretを登録する
+4. GitHub リポジトリの設定 「`Secrets and variables` > `actions` > `Repository Secrets`」 から以下のSecretを登録する
     - Name: `OWNER_API_KEY`
     - Secret: ブログのオーナーはてなアカウントの APIキーを指定してください
         - APIキーは、ブログオーナーアカウントでログイン後、[アカウント設定](https://blog.hatena.ne.jp/-/config) よりご確認いただけます
-4. GitHub リポジトリの設定 「`Actions` > `General`」 の `Workflow permissions` の設定を以下の通り変更する
+5. GitHub リポジトリの設定 「`Actions` > `General`」 の `Workflow permissions` の設定を以下の通り変更する
     - `Read and write permissions` を選択する
     - `Allow GitHub Actions to create and approve pull requests` にチェックを入れる
-5. GitHub リポジトリの設定 「`Branches`」 の`Add branch protection rule`ボタンから、ルールを作成する
+6. GitHub リポジトリの設定 「`Branches`」 の`Add branch protection rule`ボタンから、ルールを作成する
     - `Branch name pattern` に `main` を指定する
-6. リポジトリにはてなブログの記事を同期させる
-    - Actions から `initialize` を選択する
+7. リポジトリにはてなブログの記事を同期させる
+    - Actions タブを開き `initialize` workflow を選択する
     - Run workflow をクリック
     - `Branch: main` が指定されていることを確認し、`Run workflow`ボタンをクリック
     - 全記記事が含まれたプルリクエストが作成されます。これをマージしてはてなブログとリポジトリの状況を同期させてください
-
+    - ![Actionsタブ、workflowリスト、Run workflowボタン](https://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenablog/20231107/20231107163433.png)
 
 # 想定ワークフロー
 
