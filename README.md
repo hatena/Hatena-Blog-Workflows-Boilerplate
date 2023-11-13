@@ -30,7 +30,8 @@ default:
     - `Allow GitHub Actions to create and approve pull requests` にチェックを入れる
 6. GitHub リポジトリの設定 「`Branches`」 の`Add branch protection rule`ボタンから、ルールを作成する
     - `Branch name pattern` に `main` を指定する
-7. リポジトリにはてなブログの記事を同期させる
+7. GiHub リポジトリの設定 「`General`」 の `Pull Requests` 項の `Allow auto merge` にチェックを入れる
+8. リポジトリにはてなブログの記事を同期させる
     - Actions タブを開き `initialize` workflow を選択する
     - Run workflow をクリック
     - `Branch: main` が指定されていることを確認し、`Run workflow`ボタンをクリック
