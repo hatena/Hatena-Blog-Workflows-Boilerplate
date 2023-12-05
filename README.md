@@ -19,7 +19,7 @@ default:
   local_root: entries
 ```
 3. GitHub リポジトリの設定 「`Secrets and variables` > `actions` > `Repository variables`」 から以下のVariableを登録する
-    - Name: `BLOG_DOMAIN` 
+    - Name: `BLOG_DOMAIN`
     - Value: ブログのドメインを指定してください 例) staff.hatenablog.com
 4. GitHub リポジトリの設定 「`Secrets and variables` > `actions` > `Repository Secrets`」 から以下のSecretを登録する
     - Name: `OWNER_API_KEY`
@@ -35,7 +35,7 @@ default:
     - Actions タブを開き `initialize` workflow を選択する
     - Run workflow をクリック
     - `Branch: main` が指定されていることを確認し、`Run workflow`ボタンをクリック
-    - 全記記事が含まれたプルリクエストが作成されます。これをマージしてはてなブログとリポジトリの状況を同期させてください
+    - 全記事が含まれたプルリクエストが作成されます。これをマージしてはてなブログとリポジトリの状況を同期させてください
     - ![Actionsタブ、workflowリスト、Run workflowボタン](https://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenablog/20231107/20231107163433.png)
 
 # 想定ワークフロー
