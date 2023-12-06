@@ -1,5 +1,6 @@
 {
     "Add Caption to Image": {
+      "scope": "markdown,html",
       "prefix": "caption",
       "body": [
         "<figure class=\"figure-image figure-image-fotolife\" title=\"$1\">${2:画像}<figcaption>$1</figcaption></figure>",
@@ -7,7 +8,8 @@
       "description": "画像にキャプションを追加します"
     },
     "Arrange Images Horizontally": {
-      "prefix": "horizontally",
+      "scope": "markdown,html",
+      "prefix": "horizontally images",
       "body": [
         "<div class=\"images-row mceNonEditable\">${1:複数の画像}</div>"
       ],
