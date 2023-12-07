@@ -9,7 +9,7 @@
     },
     "Arrange Images Horizontally": {
       "scope": "markdown,html",
-      "prefix": "horizontally images",
+      "prefix": "horizontal images",
       "body": [
         "<div class=\"images-row mceNonEditable\">${1:複数の画像}</div>"
       ],
