@@ -7,7 +7,7 @@
 # セットアップ
 1. 本リポジトリトップに表示されている、「Use this template ボタンクリック > Create a new repository」から、新規にリポジトリを作成する
     - ![Use this templateボタンの位置](https://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenablog/20231107/20231107164142.png)
-2. `blogsync.yaml`の各種項目を記述してください
+2. `blogsync.yaml`の各種項目を記述し、変更を `main` ブランチにコミットしてください
     - `<BLOG DOMAIN>` にはブログのブログ取得時に設定したドメインを指定してください(独自ドメインではありません)
     - `<BLOG OWNER HATENA ID>` にはブログのオーナー(ブログ作成者)のはてなIDを指定してください
     - 上記のどちらの項目もブログの「詳細設定 > AtomPub > ルートエンドポイント」から確認できます。ルートエンドポイントは以下のように構成されています
