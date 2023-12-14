@@ -1,18 +1,27 @@
 {
-    "Add Caption to Image": {
+    "画像にキャプションをつける": {
       "scope": "markdown,html",
-      "prefix": "caption",
+      "prefix": "caption an image",
       "body": [
         "<figure class=\"figure-image figure-image-fotolife\" title=\"$1\">${2:画像}<figcaption>$1</figcaption></figure>",
       ],
       "description": "画像にキャプションを追加します"
     },
-    "Arrange Images Horizontally": {
+    "画像の横並べ": {
       "scope": "markdown,html",
       "prefix": "horizontal images",
       "body": [
         "<div class=\"images-row mceNonEditable\">${1:複数の画像}</div>"
       ],
       "description": "複数の画像を横並べで表示します"
+    },
+    "目次記法": {
+      "scope": "markdown,html",
+      "prefix": "table of contents",
+      "body": [
+        "[:contents]",
+        ""
+      ],
+      "description": "記事中の見出しから目次を自動的に作成する記法です"
     }
 }
