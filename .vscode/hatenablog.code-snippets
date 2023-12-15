@@ -1,0 +1,52 @@
+{
+    "画像にキャプションをつける": {
+      "scope": "markdown,html",
+      "prefix": ["caption an image","キャプション追加"],
+      "body": [
+        "<figure class=\"figure-image figure-image-fotolife\" title=\"$1\">${2:画像}<figcaption>$1</figcaption></figure>",
+      ],
+      "description": "画像にキャプションを追加します"
+    },
+    "画像の横並べ": {
+      "scope": "markdown,html",
+      "prefix": ["horizontal images", "横並べ"],
+      "body": [
+        "<div class=\"images-row mceNonEditable\">${1:複数の画像}</div>"
+      ],
+      "description": "複数の画像を横並べで表示します"
+    },
+    "目次記法": {
+      "scope": "markdown,html",
+      "prefix": ["table of contents","目次記法"],
+      "body": [
+        "[:contents]",
+        ""
+      ],
+      "description": "記事中の見出しから目次を自動的に作成する記法です"
+    },
+    "リンク記法(ブログカード)": {
+      "scope": "markdown,html",
+      "prefix": ["link","blogcard","リンク記法"],
+      "body": [
+        "[${1:URL}:embed:cite]"
+      ],
+      "description": "ブログカード形式のリンクを貼り付けます"
+    },
+    "リンク記法(自動タイトル取得)": {
+      "scope": "markdown,html",
+      "prefix": ["link","リンク記法"],
+      "body": [
+        "[${1:URL}:title]"
+      ],
+      "description": "テキストリンクを貼り付けます。またリンク先のタイトルを自動で取得します"
+    },
+    "記事カテゴリの指定": {
+      "scope": "markdown,html",
+      "prefix": ["set category"],
+      "body": [
+        "Category:",
+        "- ${1:カテゴリ名}"
+      ],
+      "description": "記事のカテゴリを指定する記法です。設定の領域に含めてください"
+    },
+}
