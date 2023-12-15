@@ -23,5 +23,30 @@
         ""
       ],
       "description": "記事中の見出しから目次を自動的に作成する記法です"
-    }
+    },
+    "リンク記法(ブログカード)": {
+      "scope": "markdown,html",
+      "prefix": ["link","blogcard","リンク記法"],
+      "body": [
+        "[${1:URL}:embed:cite]"
+      ],
+      "description": "ブログカード形式のリンクを貼り付けます"
+    },
+    "リンク記法(自動タイトル取得)": {
+      "scope": "markdown,html",
+      "prefix": ["link","リンク記法"],
+      "body": [
+        "[${1:URL}:title]"
+      ],
+      "description": "テキストリンクを貼り付けます。またリンク先のタイトルを自動で取得します"
+    },
+    "記事カテゴリの指定": {
+      "scope": "markdown,html",
+      "prefix": ["set category"],
+      "body": [
+        "Category:",
+        "- ${1:カテゴリ名}"
+      ],
+      "description": "記事のカテゴリを指定する記法です。設定の領域に含めてください"
+    },
 }
