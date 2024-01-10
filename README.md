@@ -37,6 +37,8 @@ default:
     - `Branch: main` が指定されていることを確認し、`Run workflow`ボタンをクリック
     - 全記事が含まれたプルリクエストが作成されます。これをマージしてはてなブログとリポジトリの状況を同期させてください
     - ![Actionsタブ、workflowリスト、Run workflowボタン](https://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenablog/20231107/20231107163433.png)
+9. はてなブログの「[設定 > 編集モード](https://blog.hatena.ne.jp/my/config#blog-config-syntax)」設定を「Markdownモード」に設定する
+
 
 # 想定ワークフロー
 
