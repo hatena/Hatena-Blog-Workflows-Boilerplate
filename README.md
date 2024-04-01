@@ -1,10 +1,12 @@
 # HatenaBlog Workflows Boilerplate(β)
+
 - このBoilerplateは、企業がはてなブログで技術ブログを運営する際のレビューや公開作業など、運営ワークフローを支援する目的で作成しています
 - GitHub 上で、はてなブログとの記事の同期、下書きの作成・編集・公開、公開記事の編集などを行うことができます。下書きの作成時にプルリクエストが作成されるため、記事のレビューなどの業務のワークフローに組み込むことが容易になります
 - 本機能はベータ版です。正常に動作しない可能性がありますが、予めご了承下さい
 
 
-# セットアップ
+## セットアップ
+
 1. 本リポジトリトップに表示されている、「Use this template ボタンクリック > Create a new repository」から、新規にリポジトリを作成する
     - ![Use this templateボタンの位置](https://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenablog/20231107/20231107164142.png)
 2. `blogsync.yaml`の各種項目を記述し、変更を `main` ブランチにコミットしてください
@@ -39,8 +41,7 @@ default:
     - ![Actionsタブ、workflowリスト、Run workflowボタン](https://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenablog/20231107/20231107163433.png)
 9. はてなブログの「[設定 > 編集モード](https://blog.hatena.ne.jp/my/config#blog-config-syntax)」設定を「Markdownモード」に設定する
 
-
-# 想定ワークフロー
+## 想定ワークフロー
 
 このツールで想定している下書き作成から記事公開までのワークフローは以下のとおりです。
 
@@ -49,10 +50,10 @@ default:
 3. 適宜レビューなどを行い、通れば次の公開手順に進む
 4. 下書き記事を公開する
 
+## 手順の詳細
 
-# 手順の詳細
+### 下書きの作成
 
-## 下書きの作成
 下書きの作成方法は以下の2通りの方法があります。
 
 - ブログメンバーが個人のアカウントで投稿する(記事の署名は個人のアカウントになります)
@@ -73,30 +74,46 @@ default:
 1. Actions から  `create draft` を選択し、`Title`に記事タイトルを設定、`Branch: main`に対して実行する
 2. 作成した下書きを含むプルリクエストが作成される
 
-## 下書き記事の編集
+### 下書き記事の編集
+
 - 手順「下書きの作成」で作成したプルリクエスト上で記事を編集してください
 - はてなブログでプレビューできるようにするため、下書き記事に限りプッシュされた時点ではてなブログに同期されます
 - 記事の編集画面の URL は、プルリクエストに記載されています。編集画面に遷移した後、下書きプレビューの URL を発行し、プルリクエストの概要に記載しておくとプレビューが容易になります
 
-## 下書き記事の公開
+### 下書き記事の公開
+
 - 下書き記事の `Draft: true` 行を削除し、プルリクエストを main ブランチにマージすると記事がはてなブログで公開されます
 - 記事を公開すると、下書き記事は 下書き記事用ディレクトリ `draft_entries` から 公開記事用`entries` ディレクトリに移管されます
 
-## 既存記事を修正する場合
+### 既存記事を修正する場合
+
 - 修正ブランチを作成し、main ブランチにマージすると修正がはてなブログに反映されます
 
+## Boilerplateに新しく追加されたWorkflowを取得する
 
-# トラブルシューティング
-## はてなブログ側のデータとリポジトリのデータとで差分が発生した場合
+- workflowの変更は原則 [Reusable workflows](https://github.com/hatena/hatenablog-workflows) を変更するため基本的には更新は不要です
+- ただし、新しくworkflowが追加されたりした場合は、Boilerplateを元に作成されたリポジトリに新しいファイルを追加したり既存のファイルを更新する必要があります
+- 新しいファイルを取得するには`scripts/download_boilerplate_workflows.sh`を実行してください
+
+```bash
+bash scripts/download_boilerplate_workflows.sh
+```
+
+### Scriptが見つからない場合
+
+- 手元のリポジトリに上記のファイルがない場合があります
+- お手数ですが、その場合は[こちらのファイル](https://github.com/hatena/Hatena-Blog-Workflows-Boilerplate/blob/main/scripts/download_boilerplate_workflows.sh)を自身のリポジトリに追加してください
+
+## トラブルシューティング
+
+### はてなブログ側のデータとリポジトリのデータとで差分が発生した場合
+
 はてなブログのWebの編集画面から記事を更新するなど、はてなブログ側のデータとリポジトリのデータに差異が発生してしまう場合があります。
 この場合、 Actions の `pull from hatenablog` を選択、`Branch: main`に対して実行してください。
 実行すると、リポジトリの更新日時以降に更新された公開記事のデータを更新するプルリクエストが作成されます。
 これをマージすることで、最新のデータに更新することができます。
 
-
-
-
-# workflow に関する詳細
+## workflow に関する詳細
 
 - 各 workflow では下記で提供されている Reusable workflows を利用しています
   - https://github.com/hatena/hatenablog-workflows
