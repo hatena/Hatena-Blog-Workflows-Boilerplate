@@ -6,7 +6,7 @@ on:
       - "draft_entries/**"
 
 jobs:
-  pull-draft:
+  push-draft:
     uses: hatena/hatenablog-workflows/.github/workflows/push-draft.yaml@v1
     secrets:
       OWNER_API_KEY: ${{ secrets.OWNER_API_KEY }}
