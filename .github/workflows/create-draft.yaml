@@ -12,6 +12,7 @@ jobs:
     uses: hatena/hatenablog-workflows/.github/workflows/create-draft.yaml@v1
     with:
       title: ${{ github.event.inputs.title }}
+      draft: true
       BLOG_DOMAIN: ${{ vars.BLOG_DOMAIN }}
     secrets:
       OWNER_API_KEY: ${{ secrets.OWNER_API_KEY }}
