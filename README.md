@@ -41,6 +41,12 @@ default:
     - ![Actionsタブ、workflowリスト、Run workflowボタン](https://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenablog/20231107/20231107163433.png)
 9. はてなブログの「[設定 > 編集モード](https://blog.hatena.ne.jp/my/config#blog-config-syntax)」設定を「Markdownモード」に設定する
 
+## オプション
+- 下書きの作成時のプルリクエストをドラフトプルリクエストとして作成するかどうかのオプション
+  - ドラフトプルリクエストは[利用できるプランに制限](https://docs.github.com/ja/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request)があります。対象外のプランを利用している場合、以下のファイルの該当行を `draft: false` に変更してください 
+  - `/.github/workflows/pull-draft.yaml#L15`
+  - `/.github/workflows/create-draft.yaml#L15`
+
 ## 想定ワークフロー
 
 このツールで想定している下書き作成から記事公開までのワークフローは以下のとおりです。
