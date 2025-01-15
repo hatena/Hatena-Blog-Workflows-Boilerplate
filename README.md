@@ -110,6 +110,25 @@ bash scripts/download_boilerplate_workflows.sh
 - 手元のリポジトリに上記のファイルがない場合があります
 - お手数ですが、その場合は[こちらのファイル](https://github.com/hatena/Hatena-Blog-Workflows-Boilerplate/blob/main/scripts/download_boilerplate_workflows.sh)を自身のリポジトリに追加してください
 
+## Tips
+
+### カスタムURLを指定する
+記事のURLは、特に指定しない場合投稿日時から自動的に決定されますが、カスタムURL機能を利用すると任意のURLを指定することができます。
+
+GitHubから記事を編集する場合にもカスタムURLを指定することが可能です。指定する場合、記事の設定領域に `CustomPath` フィールドを追加します。
+設定例は以下の通りです。
+
+```
+---
+Title: カスタムURLの設定例
+EditURL: https://blog.hatena.ne.jp/hatenablog/example.hatenablog.com/atom/entry/0123456789
+PreviewURL: https://example.hatenablog.com/draft/entry/xxxxxxx
+Draft: true
+CustomPath: custom/url
+---
+```
+この記事を公開すると `https://example.hatenablog.com/entry/custom/url` として公開されます。
+
 ## トラブルシューティング
 
 ### はてなブログ側のデータとリポジトリのデータとで差分が発生した場合
