@@ -41,6 +41,14 @@ default:
     - ![Actionsタブ、workflowリスト、Run workflowボタン](https://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenablog/20231107/20231107163433.png)
 9. はてなブログの「[設定 > 編集モード](https://blog.hatena.ne.jp/my/config#blog-config-syntax)」設定を「Markdownモード」に設定する
 
+### Renovate / Dependabot のセットアップ
+
+- ワークフローの機能は[hatena/hatenablog-workflows](https://github.com/hatena/hatenablog-workflows)のReusable Workflowを呼び出すことで提供されています
+- hatenablog-workflows の機能追加やバグ修正を反映するにはGitHub Actionsの参照を更新する必要があり、自動的な更新にRenovateやDependabotをご利用いただけます
+- それぞれのセットアップ方法はドキュメントをご参照ください
+  - Renovate: [Automated Dependency Updates for GitHub Actions - Renovate Docs](https://docs.renovatebot.com/modules/manager/github-actions/)
+  - Dependabot: [Dependabot でアクションを最新に保つ - GitHub Docs](https://docs.github.com/ja/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot)
+
 ## オプション
 - 下書きの作成時のプルリクエストをドラフトプルリクエストとして作成するかどうかのオプション
   - ドラフトプルリクエストは[利用できるプランに制限](https://docs.github.com/ja/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request)があります。対象外のプランを利用している場合、以下のファイルの該当行を `draft: false` に変更してください 
@@ -94,6 +102,41 @@ default:
 ### 既存記事を修正する場合
 
 - 修正ブランチを作成し、main ブランチにマージすると修正がはてなブログに反映されます
+
+
+## 予約投稿について
+
+- はてなブログでは記事の予約投稿が利用可能ですが、このBoilerplateから記事の予約投稿を行うことはできません。記事を予約投稿するには、はてなブログの記事の編集画面から設定を行ってください。
+  - [日時を指定して予約投稿する（編集オプション） - はてなブログ ヘルプ https://help.hatenablog.com/entry/editor/publish/schedule]
+  - ※予約投稿の設定を行ったあと、記事が投稿されるまでにこのワークフローを経由して記事の変更を行うと、予約投稿の設定が解除されてしまいますのでご注意ください
+- リポジトリで管理していた記事を予約投稿する場合、以下のいずれかの手順で予約投稿による変更を同期して頂く必要があります。
+
+### プルリクエストをマージする方法
+1. プルリクエストをデフォルトブランチにマージする
+  - この際、`draft:true` を削除してはいけません
+2. はてなブログ側で予約投稿を行う
+3. 記事が公開されたら `pull form hatenablog` アクションを実行する
+4. `/draft_entries` から予約投稿記事を削除する
+
+### プルリクエストをクローズする方法
+1. プルリクエストをクローズする
+2. はてなブログ側で予約投稿を行う
+3. 記事が公開されたら `pull from hatenablog` アクションを実行する
+
+
+## プルリクエストテンプレートを利用する
+
+- `create draft` アクションまたは `pull draft from hatenablog` アクションによってプルリクエストを作成する際、リポジトリに `.github/PULL_REQUEST_TEMPLATE.md` または `.github/PULL_REQUEST_TEMPLATE/draft.md` という名前のテンプレートファイルが存在すれば、そのテンプレートを利用してプルリクエストが作成されます。
+- プルリクエストテンプレートでは以下のプレースホルダが利用可能です。これらのプレースホルダはプルリクエストの作成時には記事に固有の値に置き換えられます
+
+| プレースホルダ | 値 |
+| :------------: | :----: |
+| `${EDIT_URL}`   | 下書き記事の編集画面のURL |
+| `${PREVIEW_URL}` | 下書き記事のプレビューURL（まだプレビューURLがない場合は `なし`） |
+| `${TITLE}` | 下書き記事の記事タイトル |
+| `${ENTRY_ID}` | 下書き記事のID |
+| `${OWNER_NAME}` | ブログのオーナーのアカウント名 |
+
 
 ## Boilerplateに新しく追加されたWorkflowを取得する
 

@@ -7,6 +7,6 @@ on:
 
 jobs:
   push-draft:
-    uses: hatena/hatenablog-workflows/.github/workflows/push-draft.yaml@v1
+    uses: hatena/hatenablog-workflows/.github/workflows/push-draft.yaml@fa544a63e845030ff65e35d78847e2bc2cab981e # v2.0.2
     secrets:
       OWNER_API_KEY: ${{ secrets.OWNER_API_KEY }}
