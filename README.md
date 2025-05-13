@@ -140,7 +140,7 @@ default:
 
 ## Boilerplateに新しく追加されたWorkflowを取得する
 
-- workflowの変更は原則 [Reusable workflows](https://github.com/hatena/hatenablog-workflows) を変更するため基本的には更新は不要です
+- workflowの変更は [hatena/hatenablog-workflows](https://github.com/hatena/hatenablog-workflows) を更新することによって提供されますので、GitHub Actionsの参照を更新していただくことで、機能の更新を利用できます。
 - ただし、新しくworkflowが追加されたりした場合は、Boilerplateを元に作成されたリポジトリに新しいファイルを追加したり既存のファイルを更新する必要があります
 - 新しいファイルを取得するには`scripts/download_boilerplate_workflows.sh`を実行してください
 
