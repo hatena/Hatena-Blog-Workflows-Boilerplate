@@ -9,8 +9,8 @@
 
 1. 本リポジトリトップに表示されている、「Use this template ボタンクリック > Create a new repository」から、新規にリポジトリを作成する
     - ![Use this templateボタンの位置](https://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenablog/20231107/20231107164142.png)
-2. `blogsync.yaml`の各種項目を記述し、変更を `main` ブランチにコミットしてください
-    - `<BLOG DOMAIN>` にはブログのブログ取得時に設定したドメインを指定してください(独自ドメインではありません)
+2. `blogsync.yaml`内の以下について記述し、変更を `main` ブランチにコミットしてください
+    - `<BLOG DOMAIN>`には独自ドメインを利用している場合は「独自ドメイン」を、それ以外の場合は「はてなブログのドメイン」を指定してください
     - `<BLOG OWNER HATENA ID>` にはブログのオーナー(ブログ作成者)のはてなIDを指定してください
     - 上記のどちらの項目もブログの「詳細設定 > AtomPub > ルートエンドポイント」から確認できます。ルートエンドポイントは以下のように構成されています
         - `https://blog.hatena.ne.jp/<BLOG OWNER HATENA ID>/<BLOG DOMAIN>/atom`
@@ -51,7 +51,7 @@ default:
 
 ## オプション
 - 下書きの作成時のプルリクエストをドラフトプルリクエストとして作成するかどうかのオプション
-  - ドラフトプルリクエストは[利用できるプランに制限](https://docs.github.com/ja/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request)があります。対象外のプランを利用している場合、以下のファイルの該当行を `draft: false` に変更してください 
+  - ドラフトプルリクエストは[利用できるプランに制限](https://docs.github.com/ja/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request)があります。対象外のプランを利用している場合、以下のファイルの該当行を `draft: false` に変更してください
   - `/.github/workflows/pull-draft.yaml#L15`
   - `/.github/workflows/create-draft.yaml#L15`
 
