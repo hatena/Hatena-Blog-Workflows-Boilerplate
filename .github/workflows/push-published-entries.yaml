@@ -8,6 +8,6 @@ on:
 
 jobs:
   push-published-entries:
-    uses: hatena/hatenablog-workflows/.github/workflows/push-published-entries.yaml@aa2df9dc72675704d8f7291c874a36cc02807955 # v2.0.9
+    uses: hatena/hatenablog-workflows/.github/workflows/push-published-entries.yaml@3eaf4acadd317cfcf542efea80b1b14c3701070f # v2.0.11
     secrets:
       OWNER_API_KEY: ${{ secrets.OWNER_API_KEY }}
