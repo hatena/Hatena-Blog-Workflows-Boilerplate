@@ -10,7 +10,7 @@ on:
 
 jobs:
   initialize:
-    uses: hatena/hatenablog-workflows/.github/workflows/initialize.yaml@3eaf4acadd317cfcf542efea80b1b14c3701070f # v2.0.11
+    uses: hatena/hatenablog-workflows/.github/workflows/initialize.yaml@cc16ec795c064ac5a15ac5d4ae536053d7fdce2b # v2.0.12
     with:
       is_draft_included: ${{ inputs.is_draft_included }}
       BLOG_DOMAIN: ${{ vars.BLOG_DOMAIN }}
