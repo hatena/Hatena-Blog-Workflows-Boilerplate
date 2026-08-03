@@ -10,7 +10,7 @@ on:
 
 jobs:
   push:
-    uses: hatena/hatenablog-workflows/.github/workflows/push.yaml@cc16ec795c064ac5a15ac5d4ae536053d7fdce2b # v2.0.12
+    uses: hatena/hatenablog-workflows/.github/workflows/push.yaml@b18a558b9ea673d8957fba299824d182d1b63513 # v2.1.0
     with:
       local_root: "entries"
     secrets:
