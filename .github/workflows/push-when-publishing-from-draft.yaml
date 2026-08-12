@@ -10,7 +10,7 @@ on:
 
 jobs:
   push-when-publishing-from-draft:
-    uses: hatena/hatenablog-workflows/.github/workflows/push-when-publishing-from-draft.yaml@b18a558b9ea673d8957fba299824d182d1b63513 # v2.1.0
+    uses: hatena/hatenablog-workflows/.github/workflows/push-when-publishing-from-draft.yaml@c66dc4d14ac849b7d82e7097eaf9d02485eefb71 # v2.1.1
     with:
       BLOG_DOMAIN: ${{ vars.BLOG_DOMAIN }}
     secrets:
